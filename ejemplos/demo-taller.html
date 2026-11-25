@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taller Rápido Motos · Página de ejemplo</title>
+<meta name="description" content="Taller de motos con orden de servicio por WhatsApp. Página de ejemplo creada por Roblix Digital; el negocio es ficticio.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14161a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coal:#14161a; --steel:#1f2329; --steel-2:#2a2f37; --orange:#ff6a13; --bone:#eceff1; --mute:#9eaab5; --ink:#12151a; --line:rgba(236,239,241,.18);
+  --cond:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--coal);color:var(--bone);font:18px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--orange);color:var(--coal)}
+a{color:inherit}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.demo-bar{background:#000;color:#e8e8e8;font-size:13px;line-height:1.35;padding:8px 18px;text-align:center}
+
+header.top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;max-width:1080px;margin:0 auto}
+.mark{font:800 27px/1 var(--cond);text-transform:uppercase;letter-spacing:.02em;text-decoration:none}
+.mark b{color:var(--orange)}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:7px 12px;border:1.5px solid var(--line);border-radius:6px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--mute)}
+.status[data-open="true"] i{background:#59e07b;box-shadow:0 0 0 4px rgba(89,224,123,.2)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;max-width:1080px;margin:0 auto;padding:28px 22px 72px}
+.hero h1{margin:0 0 18px;font:800 clamp(50px,10.5vw,118px)/.9 var(--cond);text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{margin:0 0 8px;max-width:32ch;color:var(--mute);font-size:20px}
+.hero>*{animation:rise .9s var(--ease) both}
+.hero>*:nth-child(2){animation-delay:.14s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+.ticket{position:relative;background:var(--bone);color:var(--ink);border-radius:14px;padding:26px 24px 24px;
+  -webkit-mask:radial-gradient(circle 11px at 0 76px,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% 76px,#0000 98%,#000) right/51% 100% no-repeat;
+          mask:radial-gradient(circle 11px at 0 76px,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% 76px,#0000 98%,#000) right/51% 100% no-repeat}
+.ticket h2{margin:0;font:800 30px/1 var(--cond);text-transform:uppercase;letter-spacing:.04em}
+.ticket .sub{margin:2px 0 0;color:#4a5560;font-size:14px}
+.perf{border:0;border-top:3px dashed #aab4bd;margin:26px 0 20px}
+.field{margin:0 0 16px}
+.field label{display:block;font:700 15px/1 var(--cond);text-transform:uppercase;letter-spacing:.1em;color:#37424d;margin-bottom:7px}
+.field select,.field input{width:100%;font:600 18px/1.2 var(--sans);padding:14px 14px;border:2px solid #b9c3cc;border-radius:8px;background:#fff;color:var(--ink);min-height:50px}
+.field input::placeholder{color:#5f6b76}
+.est{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:6px 0 18px;padding:14px 0 0;border-top:2px solid var(--ink)}
+.est .k{font:700 15px/1 var(--cond);text-transform:uppercase;letter-spacing:.1em;color:#37424d}
+.est .v{font:800 46px/.9 var(--cond);letter-spacing:-.01em}
+.est .t{font-weight:700;color:#37424d;text-align:right}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--orange);color:var(--coal);font:800 20px/1 var(--cond);text-transform:uppercase;letter-spacing:.06em;padding:18px 20px;border-radius:8px;text-decoration:none;transition:transform .35s var(--ease),background .2s}
+.btn:hover{transform:translateY(-3px);background:#ff7e33}
+.btn svg{width:22px;height:22px}
+.btn.inline{display:inline-flex;width:auto;padding:16px 26px}
+.ticket .fine{margin:12px 0 0;max-width:none;color:#3d4853;font-size:14px;text-align:center}
+
+section.band{padding:66px 0}
+section.band.alt{background:var(--steel)}
+h2.title{margin:0 0 10px;font:800 clamp(38px,7vw,72px)/.92 var(--cond);text-transform:uppercase}
+.lede{margin:0 0 30px;color:var(--mute);max-width:50ch}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin:0;padding:0;list-style:none}
+.checks li{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1.5px solid var(--line);font-weight:600;font-size:19px}
+.checks svg{flex:none;width:26px;height:26px;color:var(--orange)}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th,.tbl td{padding:16px 0;border-bottom:1.5px solid var(--line);text-align:left;vertical-align:baseline}
+.tbl thead th{font:700 15px/1 var(--cond);text-transform:uppercase;letter-spacing:.1em;color:var(--mute);padding-bottom:10px}
+.tbl td:nth-child(2){color:var(--mute)}
+.tbl td:last-child,.tbl th:last-child{text-align:right}
+.tbl .nm{font:800 28px/1 var(--cond);text-transform:uppercase;letter-spacing:.01em}
+.tbl .pr{font:800 28px/1 var(--cond);color:var(--orange)}
+
+.info{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.hours{width:100%;border-collapse:collapse}
+.hours th,.hours td{padding:12px 0;border-bottom:1.5px solid var(--line);text-align:left;font-weight:400}
+.hours td{text-align:right;font-weight:700}
+.hours tr.now th,.hours tr.now td{color:var(--orange);font-weight:700}
+address{font-style:normal;font-size:24px;line-height:1.3;margin:0 0 22px}
+
+footer{padding:30px 22px 110px;text-align:center;color:var(--mute);font-size:14px;border-top:1.5px solid var(--line)}
+footer p{margin:4px 0}
+.wa{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;align-items:center;gap:9px;background:#0f7d3e;color:#fff;font:700 16px/1 var(--sans);padding:15px 20px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.45);transition:transform .35s var(--ease)}
+.wa:hover{transform:translateY(-3px)}
+.wa svg{width:22px;height:22px}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding-bottom:50px}
+  .checks{grid-template-columns:1fr}
+  .info{grid-template-columns:1fr}
+  .tbl th:nth-child(2),.tbl td:nth-child(2){display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Página de ejemplo creada por Roblix Digital · El negocio, los precios y la dirección son ficticios</div>
+
+<header class="top">
+  <a class="mark" href="#">Taller Rápido <b>Motos</b></a>
+  <span class="status" id="status" data-open="false"><i></i><span id="statusText">Revisando horario…</span></span>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>Tu moto lista <em>cuando la necesitas.</em></h1>
+    <p>Mantenimiento, frenos, aceite y revisión. Cotiza al instante y manda tu orden por WhatsApp.</p>
+  </div>
+  <form class="ticket" id="ticket" aria-label="Orden de servicio" onsubmit="return false">
+    <h2>Orden de servicio</h2>
+    <p class="sub">Cotización estimada · no es un precio cerrado</p>
+    <hr class="perf">
+    <div class="field">
+      <label for="bike">Tipo de moto</label>
+      <select id="bike">
+        <option value="0">Scooter o automática</option>
+        <option value="1" selected>Hasta 150 cc</option>
+        <option value="2">150 a 250 cc</option>
+        <option value="3">Más de 250 cc</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="svc">Servicio</label>
+      <select id="svc"></select>
+    </div>
+    <div class="field">
+      <label for="plate">Placa (opcional)</label>
+      <input id="plate" type="text" maxlength="7" autocapitalize="characters" autocomplete="off" placeholder="ABC12D">
+    </div>
+    <div class="est" aria-live="polite">
+      <div><div class="k">Desde</div><div class="v" id="price">$ 0</div></div>
+      <div class="t" id="time">—</div>
+    </div>
+    <a class="btn" id="send" href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+      Enviar orden por WhatsApp
+    </a>
+    <p class="fine">Te confirmamos precio y turno por WhatsApp.</p>
+  </form>
+</div>
+
+<section class="band alt"><div class="wrap">
+  <h2 class="title">Revisión de 12 puntos</h2>
+  <p class="lede">Con cada servicio revisamos lo que más falla. Si algo está mal, te avisamos antes de tocar nada.</p>
+  <ul class="checks" id="checks"></ul>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2 class="title">Servicios y tiempos</h2>
+  <p class="lede">Precios de ejemplo para una moto de hasta 150 cc. El tiempo cuenta desde que recibimos la moto.</p>
+  <table class="tbl" id="tbl">
+    <thead><tr><th>Servicio</th><th>Tiempo</th><th>Desde</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</div></section>
+
+<section class="band alt"><div class="wrap info">
+  <div>
+    <h2 class="title">Horario</h2>
+    <table class="hours" id="hours">
+      <tr data-d="1,2,3,4,5"><th scope="row">Lunes a viernes</th><td>8:00 a. m. – 6:00 p. m.</td></tr>
+      <tr data-d="6"><th scope="row">Sábados</th><td>8:00 a. m. – 1:00 p. m.</td></tr>
+      <tr data-d="0"><th scope="row">Domingos</th><td>Cerrado</td></tr>
+    </table>
+  </div>
+  <div>
+    <h2 class="title">Dónde estamos</h2>
+    <address>Avenida 3 # 8-15<br>Sector Ejemplo</address>
+    <a class="btn inline" id="visitCta" href="#">Escribir por WhatsApp</a>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <p>Taller Rápido Motos · taller de motos (negocio ficticio)</p>
+  <p>Ejemplo de página web para negocios locales · Roblix Digital · roblixdigital@gmail.com</p>
+  <p>En un proyecto real, el botón de WhatsApp usa el número de tu negocio.</p>
+</footer>
+
+<a class="wa" id="waFloat" href="#" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  WhatsApp
+</a>
+
+<script>
+(function(){
+  var SVC = [
+    {n:"Cambio de aceite", base:35000, t:"45 min"},
+    {n:"Frenos", base:40000, t:"1 hora"},
+    {n:"Sincronización", base:60000, t:"2 horas"},
+    {n:"Revisión general", base:30000, t:"1 hora"}
+  ];
+  var MULT = [1,1,1.25,1.6];
+  var BIKE = ["Scooter o automática","Hasta 150 cc","150 a 250 cc","Más de 250 cc"];
+  var CHECKS = ["Frenos","Cadena y piñón","Llantas y presión","Luces y direccionales","Nivel de aceite","Batería","Suspensión","Dirección","Filtro de aire","Bujía","Guayas y cables","Tornillería"];
+  var CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>';
+  var $ = function(id){return document.getElementById(id)};
+  var money = function(n){return "$ "+(Math.round(n/1000)*1000).toLocaleString("es-CO")};
+  function wa(t){return "https://wa.me/?text="+encodeURIComponent(t)}
+
+  SVC.forEach(function(s,i){ var o=document.createElement("option"); o.value=i; o.textContent=s.n; $("svc").appendChild(o); });
+  $("checks").innerHTML = CHECKS.map(function(c){return "<li>"+CHECK_SVG+c+"</li>"}).join("");
+  var tb = $("tbl").querySelector("tbody");
+  SVC.forEach(function(s){
+    var tr=document.createElement("tr");
+    tr.innerHTML='<td class="nm">'+s.n+'</td><td>'+s.t+'</td><td class="pr">'+money(s.base)+'</td>';
+    tb.appendChild(tr);
+  });
+
+  function update(){
+    var s=SVC[+$("svc").value], b=+$("bike").value, p=s.base*MULT[b];
+    $("price").textContent=money(p); $("time").textContent="Tiempo aprox.\n"+s.t;
+    $("time").style.whiteSpace="pre-line";
+    var plate=$("plate").value.trim().toUpperCase();
+    $("send").href = wa("Hola, quiero una orden de servicio: "+s.n+" para moto "+BIKE[b].toLowerCase()+(plate?" (placa "+plate+")":"")+". Cotización estimada desde "+money(p)+". ¿Cuándo puedo llevarla?");
+  }
+  ["svc","bike"].forEach(function(id){ $(id).addEventListener("change",update); });
+  $("plate").addEventListener("input",update);
+  update();
+
+  var general=wa("Hola, quiero cotizar un servicio para mi moto.");
+  $("visitCta").href=general; $("waFloat").href=general;
+
+  var now=new Date(), dow=now.getDay(), mins=now.getHours()*60+now.getMinutes(), open=false, label;
+  if(dow>=1&&dow<=5){ open=mins>=480&&mins<1080; label=open?"Abierto ahora · hasta las 6:00 p. m.":(mins<480?"Abrimos a las 8:00 a. m.":"Cerrado por hoy"); }
+  else if(dow===6){ open=mins>=480&&mins<780; label=open?"Abierto ahora · hasta la 1:00 p. m.":(mins<480?"Abrimos a las 8:00 a. m.":"Cerrado por hoy"); }
+  else label="Hoy cerrado · abrimos el lunes";
+  $("status").dataset.open=open; $("statusText").textContent=label;
+  document.querySelectorAll("#hours tr").forEach(function(r){ if(r.dataset.d.split(",").indexOf(String(dow))>-1) r.className="now"; });
+})();
+</script>
+</body>
+</html>

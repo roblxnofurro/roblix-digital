@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estilo y Color · Página de ejemplo</title>
+<meta name="description" content="Peluquería con reserva de citas por WhatsApp. Página de ejemplo creada por Roblix Digital; el negocio es ficticio.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#2a0f3b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2a0f3b; --plum-2:#3a1650; --coral:#ff6a55; --lilac:#e9dfff; --butter:#ffdf8e; --ink:#1e1029; --white:#fff;
+  --dim:#6a5a78;
+  --disp:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--plum);color:var(--white);font:17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--coral);color:var(--white)}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid var(--butter);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.demo-bar{background:#000;color:#e8e8e8;font-size:13px;line-height:1.35;padding:8px 18px;text-align:center}
+
+header.top{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;max-width:1080px;margin:0 auto}
+.mark{font:800 24px/1 var(--disp);letter-spacing:-.02em;text-decoration:none}
+.mark b{color:var(--coral)}
+.top a.link{font-weight:700;text-decoration:none;border-bottom:2px solid var(--coral);padding-bottom:2px}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;max-width:1080px;margin:0 auto;padding:30px 22px 70px}
+.hero h1{margin:0 0 20px;font:800 clamp(44px,9vw,104px)/.92 var(--disp);letter-spacing:-.045em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero p{margin:0 0 28px;max-width:30ch;color:#e0d2f0;font-size:20px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:var(--plum);font:700 18px/1 var(--sans);padding:18px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .4s var(--ease),background .2s}
+.btn:hover{transform:translateY(-3px);background:#ff8b79}
+.btn[disabled]{background:#6b5a78;color:#d8cde2;cursor:not-allowed;transform:none}
+.btn svg{width:22px;height:22px}
+.strands{width:100%;max-width:440px;justify-self:center}
+.strands path{fill:none;stroke-linecap:round;stroke-width:24;stroke-dasharray:900;stroke-dashoffset:0;animation:draw 1.6s var(--ease) both}
+.strands path:nth-child(2){animation-delay:.12s}.strands path:nth-child(3){animation-delay:.24s}.strands path:nth-child(4){animation-delay:.36s}.strands path:nth-child(5){animation-delay:.48s}.strands path:nth-child(6){animation-delay:.6s}
+@keyframes draw{from{stroke-dashoffset:900}to{stroke-dashoffset:0}}
+
+.book{background:var(--lilac);color:var(--ink);border-radius:36px 36px 0 0;padding:64px 0 70px}
+.book h2{margin:0 0 8px;font:800 clamp(34px,6vw,60px)/1 var(--disp);letter-spacing:-.04em}
+.book .lede{margin:0 0 30px;color:var(--dim);max-width:46ch}
+.panel{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+.step{background:var(--white);border-radius:24px;padding:22px 22px 24px;margin-bottom:16px}
+.step h3{margin:0 0 14px;font:800 22px/1.1 var(--disp);letter-spacing:-.02em}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;border:0}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chip span{display:block;padding:13px 17px;border-radius:14px;border:2px solid #d7c8ee;font-weight:700;background:#fff;transition:background .2s,border-color .2s,transform .3s var(--ease);min-height:48px}
+.chip span small{display:block;font-weight:400;color:var(--dim);font-size:13px}
+.chip input:hover+span{transform:translateY(-2px);border-color:var(--coral)}
+.chip input:checked+span{background:var(--plum);border-color:var(--plum);color:#fff}
+.chip input:checked+span small{color:#dccdf0}
+.chip input:disabled+span{opacity:.4;text-decoration:line-through;cursor:not-allowed}
+.chip input:focus-visible+span{outline:3px solid var(--coral);outline-offset:2px}
+.name{width:100%;font:600 17px/1 var(--sans);padding:15px 16px;border-radius:14px;border:2px solid #d7c8ee;color:var(--ink);background:#fff}
+.name::placeholder{color:#7d6b8c}
+.summary{position:sticky;top:16px;background:var(--plum);color:#fff;border-radius:24px;padding:26px 24px}
+.summary h3{margin:0 0 14px;font:800 22px/1.1 var(--disp);letter-spacing:-.02em}
+.summary ul{margin:0 0 18px;padding:0;list-style:none;min-height:24px}
+.summary li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.summary .empty{color:#d9c8ec;border:0}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 6px;font-weight:700}
+.total strong{font:800 34px/1 var(--disp);letter-spacing:-.03em;color:var(--butter)}
+.fine{margin:12px 0 0;color:#d9c8ec;font-size:14px}
+.when{margin:0 0 18px;color:#fff;font-weight:700;min-height:1.5em}
+
+.how{background:var(--butter);color:var(--ink);padding:56px 0}
+.how ol{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:0;padding:0;list-style:none}
+.how li b{display:block;font:800 clamp(28px,4.6vw,44px)/1 var(--disp);letter-spacing:-.04em;margin-bottom:6px}
+.how li span{color:#4b3d1c;max-width:24ch;display:block}
+
+.visit{padding:64px 0;display:block}
+.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.visit h2{margin:0 0 14px;font:800 clamp(30px,5vw,46px)/1 var(--disp);letter-spacing:-.04em}
+.hours{width:100%;border-collapse:collapse}
+.hours th,.hours td{padding:11px 0;border-bottom:1px solid rgba(255,255,255,.22);text-align:left;font-weight:400}
+.hours td{text-align:right;font-weight:700}
+.hours tr.now th,.hours tr.now td{color:var(--butter);font-weight:700}
+address{font-style:normal;font-size:22px;line-height:1.35;margin:0 0 20px}
+
+footer{padding:30px 22px 110px;text-align:center;color:#d3c3e6;font-size:14px;border-top:1px solid rgba(255,255,255,.2)}
+footer p{margin:4px 0}
+.wa{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;align-items:center;gap:9px;background:#0f7d3e;color:#fff;font:700 16px/1 var(--sans);padding:15px 20px;border-radius:999px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.4);transition:transform .35s var(--ease)}
+.wa:hover{transform:translateY(-3px)}
+.wa svg{width:22px;height:22px}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding-bottom:40px}
+  .strands{max-width:300px;order:-1}
+  .panel{grid-template-columns:1fr}
+  .summary{position:static}
+  .how ol{grid-template-columns:1fr;gap:18px}
+  .visit .grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Página de ejemplo creada por Roblix Digital · El negocio, los precios y la dirección son ficticios</div>
+
+<header class="top">
+  <a class="mark" href="#">Estilo <b>y</b> Color</a>
+  <a class="link" href="#cita">Agendar</a>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <h1>Tu cita, <em>sin filas</em> y sin esperas.</h1>
+    <p>Elige tus servicios, el día y la hora. Te llega a nuestro WhatsApp y te confirmamos.</p>
+    <a class="btn" href="#cita">Armar mi cita</a>
+  </div>
+  <svg class="strands" viewBox="0 0 400 440" role="img" aria-label="Ilustración de mechones de cabello en colores coral, amarillo y lila">
+    <path d="M60 430C20 320 120 260 90 160S120 30 170 10" stroke="#ff6a55"/>
+    <path d="M110 430C80 330 190 280 160 180S190 50 240 24" stroke="#ffdf8e"/>
+    <path d="M160 430C130 340 250 300 220 200S250 70 300 40" stroke="#e9dfff"/>
+    <path d="M210 430C190 350 300 320 270 220S300 100 350 66" stroke="#ff8c7a"/>
+    <path d="M260 430C250 360 340 340 320 250S340 150 380 120" stroke="#b895f0"/>
+    <path d="M10 430C0 360 60 330 40 250" stroke="#ffb199"/>
+  </svg>
+</div>
+
+<section class="book" id="cita"><div class="wrap">
+  <h2>Arma tu cita</h2>
+  <p class="lede">Tres pasos y listo. Es una solicitud: el salón la confirma por WhatsApp, y el precio final depende de tu cabello.</p>
+  <div class="panel">
+    <div>
+      <fieldset class="step" style="border:0;margin:0 0 16px">
+        <legend style="padding:0"><h3>¿Qué te hacemos?</h3></legend>
+        <div class="chips" id="services"></div>
+      </fieldset>
+      <fieldset class="step" style="border:0;margin:0 0 16px">
+        <legend style="padding:0"><h3>¿Qué día?</h3></legend>
+        <div class="chips" id="days"></div>
+      </fieldset>
+      <fieldset class="step" style="border:0;margin:0 0 16px">
+        <legend style="padding:0"><h3>¿A qué hora?</h3></legend>
+        <div class="chips" id="times"></div>
+      </fieldset>
+      <div class="step">
+        <h3><label for="who">¿Cómo te llamas?</label></h3>
+        <input class="name" id="who" type="text" autocomplete="given-name" placeholder="Tu nombre (opcional)">
+      </div>
+    </div>
+    <aside class="summary" aria-live="polite">
+      <h3>Tu cita</h3>
+      <ul id="list"><li class="empty">Aún no has elegido servicios.</li></ul>
+      <div class="total"><span>Total desde</span><strong id="total">$ 0</strong></div>
+      <p class="when" id="when">Elige día y hora.</p>
+      <a class="btn" id="send" href="#" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+        Enviar por WhatsApp
+      </a>
+      <p class="fine">No se cobra nada al pedir la cita.</p>
+    </aside>
+  </div>
+</div></section>
+
+<section class="how"><div class="wrap">
+  <ol>
+    <li><b>Eliges</b><span>Servicios, día y hora, desde tu celular.</span></li>
+    <li><b>Envías</b><span>Se abre WhatsApp con tu mensaje ya escrito.</span></li>
+    <li><b>Confirmamos</b><span>Te respondemos en el día con tu horario.</span></li>
+  </ol>
+</div></section>
+
+<section class="visit"><div class="wrap grid">
+  <div>
+    <h2>Horario</h2>
+    <table class="hours" id="hours">
+      <tr data-d="2,3,4,5,6"><th scope="row">Martes a sábado</th><td>9:00 a. m. – 7:00 p. m.</td></tr>
+      <tr data-d="0"><th scope="row">Domingos</th><td>10:00 a. m. – 2:00 p. m.</td></tr>
+      <tr data-d="1"><th scope="row">Lunes</th><td>Cerrado</td></tr>
+    </table>
+  </div>
+  <div>
+    <h2>Dónde estamos</h2>
+    <address>Carrera 7 # 12-40<br>Centro Ejemplo</address>
+    <a class="btn" id="visitCta" href="#">Escribir por WhatsApp</a>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <p>Estilo y Color · peluquería y salón de belleza (negocio ficticio)</p>
+  <p>Ejemplo de página web para negocios locales · Roblix Digital · roblixdigital@gmail.com</p>
+  <p>En un proyecto real, el botón de WhatsApp usa el número de tu negocio.</p>
+</footer>
+
+<a class="wa" id="waFloat" href="#" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  WhatsApp
+</a>
+
+<script>
+(function(){
+  var SERVICES = [
+    {n:"Corte", s:"mujer, hombre o niños", p:20000},
+    {n:"Tinte", s:"raíz, mechas o cambio total", p:70000},
+    {n:"Manicure", s:"tradicional o semipermanente", p:25000},
+    {n:"Tratamiento capilar", s:"hidratación o keratina", p:45000},
+    {n:"Peinado", s:"para evento", p:30000},
+    {n:"Cejas", s:"diseño y depilación", p:12000}
+  ];
+  var DAYS = [{n:"Martes",v:2},{n:"Miércoles",v:3},{n:"Jueves",v:4},{n:"Viernes",v:5},{n:"Sábado",v:6},{n:"Domingo",v:0}];
+  var TIMES = [{t:"9:00 a. m.",m:540},{t:"10:30 a. m.",m:630},{t:"12:00 m.",m:720},{t:"2:00 p. m.",m:840},{t:"3:30 p. m.",m:930},{t:"5:00 p. m.",m:1020}];
+  var $ = function(id){return document.getElementById(id)};
+  var money = function(n){return "$ "+n.toLocaleString("es-CO")};
+  var state = {services:[], day:null, time:null};
+
+  function chip(type,name,value,html,onchange){
+    var l=document.createElement("label"); l.className="chip";
+    var i=document.createElement("input"); i.type=type; i.name=name; i.value=value;
+    i.addEventListener("change",onchange);
+    var s=document.createElement("span"); s.innerHTML=html;
+    l.appendChild(i); l.appendChild(s); return l;
+  }
+  SERVICES.forEach(function(x,k){
+    $("services").appendChild(chip("checkbox","svc",k,x.n+"<small>"+x.s+" · desde "+money(x.p)+"</small>",function(e){
+      var idx=state.services.indexOf(k);
+      if(e.target.checked && idx<0) state.services.push(k); else if(!e.target.checked && idx>-1) state.services.splice(idx,1);
+      update();
+    }));
+  });
+  DAYS.forEach(function(d){
+    $("days").appendChild(chip("radio","day",d.v,d.n,function(){ state.day=d; syncTimes(); update(); }));
+  });
+  TIMES.forEach(function(t,k){
+    $("times").appendChild(chip("radio","time",k,t.t,function(){ state.time=t; update(); }));
+  });
+  function syncTimes(){
+    var sunday = state.day && state.day.v===0;
+    document.querySelectorAll("#times input").forEach(function(i,k){
+      var off = sunday && (TIMES[k].m<600 || TIMES[k].m>=840); // domingo: de 10:00 a. m. a 2:00 p. m.
+      i.disabled = off;
+      if(off && i.checked){ i.checked=false; state.time=null; }
+    });
+  }
+  function update(){
+    var list=$("list"), total=0;
+    list.innerHTML="";
+    if(!state.services.length){ list.innerHTML='<li class="empty">Aún no has elegido servicios.</li>'; }
+    state.services.forEach(function(k){
+      total += SERVICES[k].p;
+      var li=document.createElement("li"); li.innerHTML="<span>"+SERVICES[k].n+"</span><span>"+money(SERVICES[k].p)+"</span>"; list.appendChild(li);
+    });
+    $("total").textContent=money(total);
+    $("when").textContent = (state.day&&state.time) ? state.day.n+" · "+state.time.t : (state.day ? state.day.n+" · elige la hora" : "Elige día y hora.");
+    var ready = state.services.length && state.day && state.time;
+    var a=$("send");
+    a.setAttribute("aria-disabled", ready ? "false":"true");
+    if(ready){
+      var who=$("who").value.trim();
+      var msg=(who?"Hola, soy "+who+". ":"Hola. ")+"Quiero reservar: "+state.services.map(function(k){return SERVICES[k].n}).join(", ")+
+        ". Día: "+state.day.n+" a las "+state.time.t.replace(/\.$/,"")+". Total estimado desde "+money(total)+".";
+      a.href="https://wa.me/?text="+encodeURIComponent(msg);
+      a.style.opacity=1; a.style.pointerEvents="auto";
+    } else {
+      a.removeAttribute("href"); a.style.opacity=.55; a.style.pointerEvents="none";
+    }
+  }
+  $("who").addEventListener("input",update);
+  update();
+
+  var general="https://wa.me/?text="+encodeURIComponent("Hola, quiero información sobre una cita.");
+  $("visitCta").href=general; $("waFloat").href=general;
+  var dow=new Date().getDay();
+  document.querySelectorAll("#hours tr").forEach(function(r){ if(r.dataset.d.split(",").indexOf(String(dow))>-1) r.className="now"; });
+})();
+</script>
+</body>
+</html>
